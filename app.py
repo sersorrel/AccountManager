@@ -464,7 +464,7 @@ def data_download():
 
         # If the character doesn't exist, return an error.
         if not character_result:
-            return render_template('private/data_download.html', error="Character '{}' does not exist!".format(character_name), resources=resources)
+            return render_template('private/data_download.html', error="You have no character called '{}'!".format(character_name), resources=resources)
 
         # Get the character's data.
         query = "SELECT xml_data FROM charxml WHERE id = %s;"
@@ -554,7 +554,7 @@ def run_app():
     # Setup Bootstrap
     Bootstrap(app)
 
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='localhost', port=5000)
 
 
 if __name__ == '__main__':
