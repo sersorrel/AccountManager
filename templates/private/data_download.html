@@ -2,10 +2,10 @@
 {% block title %}Data Download{% endblock %}
 
 {% block content %}
-<div class="container" style="margin-top: 50px">
+<div class="container">
 
     {# Display logo #}
-    <div style="margin-bottom: 50px">
+    <div>
         <img
                 src="{{ url_for('static', filename=resources.LOGO) }}"
                 class="center-block img-responsive mx-auto d-block"
@@ -31,6 +31,9 @@
         </div>
     {% endif %}
 
+    <p>Hello! <strong>You probably don't need to be here.</strong> If you've just created an account, you can close this webpage and log in to the server using the game client.</p>
+    <p>If you don't have the client set up yet, you'll need to find a copy of the game and make some changes specific to this server. Ask in #gaming on Slack or Discord for details.</p>
+
     {# Form which takes in Character Name #}
     <form action="{{ url_for('data_download') }}" method="post">
         {# Account Name input #}
@@ -42,7 +45,7 @@
 
         {# Submit button #}
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Download</button>
+            <button type="submit" class="btn btn-primary">Export character XML</button>
         </div>
     </form>
     <p class="text-muted">AccountManager is AGPLv3. Source is available at <a href="https://github.com/sersorrel/AccountManager">https://github.com/sersorrel/AccountManager</a>.</p>
